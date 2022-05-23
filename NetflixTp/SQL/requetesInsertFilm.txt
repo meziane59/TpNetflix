@@ -1,0 +1,151 @@
+/************************************************************************************************* type_film**/
+
+insert into type_film values('long metrage');
+insert into type_film values('court metrage');
+insert into type_film values('serie');
+
+/************************************************************************************************* film_categorie **/
+
+insert into film_categorie values('action');
+insert into film_categorie values('anime');
+insert into film_categorie values('aventure');
+insert into film_categorie values('humour');
+insert into film_categorie values('serie');
+
+
+/**************************************************************************************************** film **/     
+/**  action  **/
+insert into film values('Dog','2015','Un célibataire se retrouve avec un chien',1);
+insert into film values('Fortress','2017','Un jeune homme veut voir son père et se retouve dans une forteresse',1);
+insert into film values('Jeu de survie','2021','Un policier se rerouve dans une ferme et doit survivre',1);
+insert into film values('Opération blacklight','2022','Un aent fédéral  cherche à trouver un assassin',1);
+insert into film values('Sans aucun remords','2018','Des membres des services spéciaux se font tuer',1);
+insert into film values('Top gun','2010','Le fils d''un ancien militaire s''engage comme pilote',1);
+insert into film values('Uncharted','2015','Une équipe cherchent à récupérer un trésor après une trahison',1);
+
+/** anime  **/
+insert into film values('Alerte rouge','2021','Méline, une petite fille qui devient un panda',1); 
+insert into film values('Buzz','2014','Buzz l''éclaire et le monde des jouets',1);
+insert into film values('Jujutsu kaisen','2018','Un jeune homme est frappé d''une malédiction',1);
+insert into film values('Krypto et les super-animaux','2018','Des animaux se prennent pour des héros',1);
+insert into film values('Les bad guys','2016','Un loup se prend pour un chef de bande',1);
+insert into film values('Ride your wave','2014','Un couple d''amis  s''entraine à srufer',1);
+insert into film values('White snake','2018','Une inconnue doit assassiné un serpent',1);
+
+/** aventure **/
+
+insert into film values('2067','2022','Un enfant doit sauver l''humanité',1);
+insert into film values('Arthur','2016','Une bande d''amis se rerouve dans un cauchemard',1);
+insert into film values('Nouvelle','2017','Un jeune héro doit sauver une pricesse',1);
+insert into film values('star wars - à la recherche du jedi perdu','2013','les héros recherchent le jedi',1);
+insert into film values('Un talent en or massif','2022','Un acteur n''a plus de succès',1);
+
+/** humour **/
+insert into film values('Attention au départ','2018','Un père doit aller en vacances sans sa femme',1);
+insert into film values('Jexi','2013','Jexi est un smatphone avec intelligence artificielle',1);
+insert into film values('La flamme','2015','Téléréalité pour trouver l''amour',1);
+insert into film values('Le sens de la famille','2019','Une famille explosive changent de corps',1);
+insert into film values('Les segpa','2022','Un jeune homme se retrouve dans une classe de segpa',1);
+insert into film values('Radin!','2019','Un homme proche des ses sous',1);
+
+/** series **/
+insert into film values('Cobra kai', '2019','Cobra kïa la série',3);
+insert into film values('Miss marvel', '2014','Nouvelle héroïne de Marvel',3);
+
+
+/************************************************************************************************* film_film_categorie **/
+/** action **/
+insert into film_film_categorie values(1,1);
+insert into film_film_categorie values(2,1);
+insert into film_film_categorie values(3,1);
+insert into film_film_categorie values(4,1);
+insert into film_film_categorie values(5,1);
+insert into film_film_categorie values(6,1);
+insert into film_film_categorie values(7,1);
+
+/** annime **/
+insert into film_film_categorie values(8,2);
+insert into film_film_categorie values(9,2);
+insert into film_film_categorie values(10,2);
+insert into film_film_categorie values(11,2);
+insert into film_film_categorie values(12,2);
+insert into film_film_categorie values(13,2);
+insert into film_film_categorie values(14,2);
+
+/** aventure **/
+insert into film_film_categorie values(15,3);
+insert into film_film_categorie values(16,3);
+insert into film_film_categorie values(9,3);
+insert into film_film_categorie values(17,3);
+insert into film_film_categorie values(18,3);
+insert into film_film_categorie values(19,3);
+
+/** humour **/
+insert into film_film_categorie values(8,4);
+insert into film_film_categorie values(20,4);
+insert into film_film_categorie values(21,4);
+insert into film_film_categorie values(22,4);
+insert into film_film_categorie values(23,4);
+insert into film_film_categorie values(12,4);
+insert into film_film_categorie values(24,4);
+insert into film_film_categorie values(25,4);
+insert into film_film_categorie values(6,4);
+
+/** serie **/
+insert into film_film_categorie values(26,5);
+insert into film_film_categorie values(27,5);
+
+
+/********************************************************************************************************* saison **/
+insert into saison values('Cobra kai S1','Permière saison');
+insert into saison values('Cobra kai S2','Deuxième saison');
+insert into saison values('Miss marvel S1','Permière saison');
+insert into saison values('Film','Film');
+
+
+
+/************************************************************************************************************  episode **/
+/** action  **/
+insert into episode values('','','','Tarik',160,'20','film\action\',0,1,4);
+insert into episode values('','','','Yannick',240,'16','film\action\',0,2,4);
+insert into episode values('','','','Aboubacar',90,'18','film\action\',0,3,4);
+insert into episode values('','','','Meziane',84,'10','film\action\',0,4,4);
+insert into episode values('','','','Tarik',125,'16','film\action\',0,5,4);
+insert into episode values('','','','Yannick',222,'16','film\action\',0,6,4);
+insert into episode values('','','','Meziane',63,'20','film\action\',0,7,4);
+
+/** anime **/
+insert into episode values('','','','Tarik',120,'10','film\anime\',0,8,4);
+insert into episode values('','','','Aboubacar',160,'20','film\anime\',0,9,4);
+insert into episode values('','','','Yannick',90,'10','film\anime\',0,10,4);
+insert into episode values('','','','Meziane',102,'5','film\action\',0,11,4);
+insert into episode values('','','','Tarik',83,'18','film\anime\',0,12,4);
+insert into episode values('','','','Aboubacar',160,'21','film\anime\',0,13,4);
+insert into episode values('','','','Yannick',105,'10','film\anime\',0,14,4);
+
+/** aventure  **/
+insert into episode values('','','','Meziane',160,'21','film\aventure\',0,15,4);
+insert into episode values('','','','Tarik',203,'18','film\aventure\',0,16,4);
+insert into episode values('','','','Aboubacar',95,'10','film\aventure\',0,17,4);
+insert into episode values('','','','Yannick',97,'18','film\aventure\',0,18,4);
+insert into episode values('','','','Meziane',102,'10','film\aventure\',0,19,4);
+insert into episode values('','','','Tarick',95,'13','film\aventure\',0,20,4);
+
+/** humour **/
+insert into episode values('','','','Aboubacar',104,'21','film\humour\',0,21,4);
+insert into episode values('','','','Yannick',85,'10','film\humour\',0,22,4);
+insert into episode values('','','','Meziane',104,'21','film\humour\',0,23,4);
+insert into episode values('','','','Tarick',104,'10','film\humour\',0,24,4);
+insert into episode values('','','','Aboubacar',87,'21','film\humour\',0,25,4);
+insert into episode values('','','','Yannick',154,'10','film\humour\',0,26,4);
+
+/**  serie  **/ 
+insert into episode values('Cobra Kai E1','Le retour','2019','Aboubacar',104,'21','film\humour\',0,26,1);
+insert into episode values('Cobra Kai E2','Le combat','2019','Yannick',100,'21','film\humour\',0,26,1);
+insert into episode values('Cobra Kai E3','Le tournoi','2019','Meziane',95,'10','film\humour\',0,26,1);
+insert into episode values('Cobra Kai E4','Le passé','2019','Aboubacar',98,'21','film\humour\',0,26,1);
+insert into episode values('Cobra Kai E1','Nouveau dojo','2020','Tarik',104,'21','film\humour\',0,26,2);
+insert into episode values('Cobra Kai E2','L''accident','2020','Yannick',104,'21','film\humour\',0,26,2);
+insert into episode values('Miss marvel E1','Nouvelle héroïne','2014','Meziane',104,'21','film\humour\',0,27,3);
+insert into episode values('Miss marvel E1','Nouvelle héroïne 2','2014','Aboubacar',104,'21','film\humour\',0,27,3);
+
