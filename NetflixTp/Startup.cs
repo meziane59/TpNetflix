@@ -46,9 +46,9 @@ namespace NetflixTp
                 });               
             });
 
-            // Ajout du SERVICE EFCoreDemoContext pour EF
-           // services.AddDbContext<masterContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("masterContextConnection")));
+            // Ajout du SERVICE masterContext
+            services.AddDbContext<masterContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("masterContextConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +66,7 @@ namespace NetflixTp
             {
                 options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             });
+
             app.UseRouting();
 
             app.UseAuthorization();
