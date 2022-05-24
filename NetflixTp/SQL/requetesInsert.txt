@@ -1,0 +1,112 @@
+/** type_utilisateur isAdmin  **/
+
+insert into type_utilisateur values(0);
+insert into type_utilisateur values(1);
+
+
+/** droits_utilisateur  **/
+
+insert into droits_utilisateur (nom_droits) values('Ajouter utilisateur');
+insert into droits_utilisateur (nom_droits) values('Lire utilisateur');
+insert into droits_utilisateur (nom_droits) values('Modifier utilisateur');
+insert into droits_utilisateur (nom_droits) values('Supprimer utilisateur');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter profil');
+insert into droits_utilisateur (nom_droits) values('Lire profil');
+insert into droits_utilisateur (nom_droits) values('Modifier profil');
+insert into droits_utilisateur (nom_droits) values('Supprimer profil');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter droits utilisateur');
+insert into droits_utilisateur (nom_droits) values('Lire droits utilisateur');
+insert into droits_utilisateur (nom_droits) values('Modifier droits utilisateur');
+insert into droits_utilisateur (nom_droits) values('Supprimer droits utilisateur');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter film');
+insert into droits_utilisateur (nom_droits) values('Lire film');
+insert into droits_utilisateur (nom_droits) values('Modifier film');
+insert into droits_utilisateur (nom_droits) values('Supprimer film');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter catgégorie film');
+insert into droits_utilisateur (nom_droits) values('Lire catgégorie film');
+insert into droits_utilisateur (nom_droits) values('Modifier catgégorie film');
+insert into droits_utilisateur (nom_droits) values('Supprimer catgégorie film');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter type film');
+insert into droits_utilisateur (nom_droits) values('Lire type film');
+insert into droits_utilisateur (nom_droits) values('Modifier type film');
+insert into droits_utilisateur (nom_droits) values('Supprimer type film');
+
+insert into droits_utilisateur (nom_droits) values('Ajouter questions_reponses');
+insert into droits_utilisateur (nom_droits) values('Lire questions_reponses');
+insert into droits_utilisateur (nom_droits) values('Modifier questions_reponses');
+insert into droits_utilisateur (nom_droits) values('Supprimer questions_reponses');
+
+
+
+/** type_utilisateur_droits **/
+
+insert into type_utilisateur_droits values(1,1);
+insert into type_utilisateur_droits values(1,2);
+insert into type_utilisateur_droits values(1,3);
+insert into type_utilisateur_droits values(1,4);
+insert into type_utilisateur_droits values(1,5);
+insert into type_utilisateur_droits values(1,6);
+insert into type_utilisateur_droits values(1,7);
+insert into type_utilisateur_droits values(1,8);
+insert into type_utilisateur_droits values(1,9);
+insert into type_utilisateur_droits values(1,10);
+insert into type_utilisateur_droits values(1,11);
+insert into type_utilisateur_droits values(1,12);
+insert into type_utilisateur_droits values(1,13);
+insert into type_utilisateur_droits values(1,14);
+insert into type_utilisateur_droits values(1,15);
+insert into type_utilisateur_droits values(1,16);
+insert into type_utilisateur_droits values(1,17);
+insert into type_utilisateur_droits values(1,18);
+insert into type_utilisateur_droits values(1,19);
+insert into type_utilisateur_droits values(1,20);
+insert into type_utilisateur_droits values(1,21);
+insert into type_utilisateur_droits values(1,22);
+insert into type_utilisateur_droits values(1,23);
+insert into type_utilisateur_droits values(1,24);
+insert into type_utilisateur_droits values(1,25);
+insert into type_utilisateur_droits values(1,26);
+insert into type_utilisateur_droits values(1,27);
+insert into type_utilisateur_droits values(1,28);
+
+/** utilisateur **/
+
+insert into utilisateur values('Meziane','Meziane', '20000101','meziane@meziane.fr','0101010101','Meziane',1);
+insert into  utilisateur  values('Aboubacar','Aboubacar','20000101','aboubacar@aboubacar.fr','0101010101','Aboubacar',1);
+insert into utilisateur  values('Tarik','Tarik', '20000101','tarik@tarik.fr','0101010101','Tarik',1);
+insert into utilisateur  values('Yannick','Yannick', '20000101','yannick@yannick.fr','0101010101','Yannick',1);
+
+
+/** abonnement **/
+
+insert into abonnement values('20220501','20221201',1,1);
+insert into abonnement values('20220501','20221201',1,2);
+insert into abonnement values('20220501','20221201',1,3);
+insert into abonnement values('20220501','20221201',1,4);
+
+
+/** profil **/
+
+insert into profil values('principal','principal');
+insert into profil values('jeunesse', 'jeunesse');
+
+
+/** utilisateur_profil **/
+
+insert into utilisateur_profil values(1,1);
+insert into utilisateur_profil values(2,1);
+insert into utilisateur_profil values(3,1);
+insert into utilisateur_profil values(4,1);
+
+
+
+/** questions_reponses**/
+
+insert into questions_reponses values('Comment s''inscrire', 'Cliquez sur : créer un compte');
+insert into questions_reponses values('Comment retouver mont MDP','Cliquez sur MDP oublié');
+insert into questions_reponses values('Je n''arrive pas à me connecter','Attendre l''activation de votre compte');

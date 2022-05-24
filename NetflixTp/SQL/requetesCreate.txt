@@ -1,0 +1,149 @@
+ /**  Créer les tables  **/
+
+
+CREATE TABLE type_utilisateur(
+    	id_type_utilisateur int  identity(1,1) NOT NULL,
+    	is_admin bit,
+	Primary key clustered(id_type_utilisateur asc)
+);
+
+CREATE TABLE utilisateur (
+    	id_utilisateur int  identity(1,1) NOT NULL,
+    	nom_profil VARCHAR(20) NOT NULL,
+	prenom VARCHAR(20) NOT NULL,
+	date_naissance datetime NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	telephone VARCHAR(20),
+	mdp VARCHAR(20) NOT NULL,
+    	OrderNumber int NOT NULL,
+	Primary key clustered(id_utilisateur asc),
+    	id_type_utilisateur int FOREIGN KEY REFERENCES type_utilisateur(id_type_utilisateur)
+);
+
+create table droits_utilisateur (
+ 	id_droits_utilisateurs int  identity(1,1) NOT NULL,
+	nom_droits VARCHAR(MAX),
+	Primary key clustered(id_droits_utilisateurs asc)
+);
+
+
+/**  table d'association   **/
+CREATE TABLE type_utilisateur_droits (
+	id_type_utilisateur int NOT NULL,
+	id_droits_utilisateurs int NOT NULL
+	, CONSTRAINT type_utilisateur_droits_PK PRIMARY KEY (id_type_utilisateur, id_droits_utilisateurs)
+	, CONSTRAINT type_utilisateur_droits_type_utilisateur_FK FOREIGN KEY (id_type_utilisateur)
+	REFERENCES type_utilisateur(id_type_utilisateur)
+	, CONSTRAINT type_utilisateur_droits_droits_utilisateur_FK FOREIGN KEY (id_droits_utilisateurs)
+	REFERENCES droits_utilisateur(id_droits_utilisateurs)
+);
+
+
+CREATE TABLE Abonnement(
+    	id_abonnement int  identity(1,1) NOT NULL,
+    	debut_abonnement dateTime,
+	fin_abonnement dateTime,
+	abonnement_actif bit,
+	Primary key clustered(id_abonnement asc),
+    	id_utilisateur int FOREIGN KEY REFERENCES utilisateur(id_utilisateur)
+);
+
+
+create table questions_reponses (
+ 	id_question_reponse int  identity(1,1) NOT NULL,
+	question VARCHAR(max) NOT NULL,
+	reponse VARCHAR(max),
+	Primary key clustered(id_question_reponse asc)
+);
+
+
+CREATE TABLE profil (
+    	id_profil int  identity(1,1) NOT NULL,
+    	type_profil VARCHAR(20) NOT NULL,
+	nom_profil VARCHAR(20) NOT NULL,
+	Primary key clustered(id_profil asc)
+);
+
+
+/**  table d'association   **/
+CREATE TABLE utilisateur_profil (
+	id_utilisateur int NOT NULL,
+	id_profil int NOT NULL
+	, CONSTRAINT utilisateur_profil_PK PRIMARY KEY (id_utilisateur, id_profil)
+	, CONSTRAINT utilisateur_profil_utilisateur_FK FOREIGN KEY (id_utilisateur)
+	REFERENCES utilisateur(id_utilisateur)
+	, CONSTRAINT utilisateur_profil_profil_FK FOREIGN KEY (id_profil)
+	REFERENCES profil(id_profil)
+);
+
+CREATE TABLE type_film (
+id_type_film INT IDENTITY (1, 1) NOT NULL,
+nom_type_film VARCHAR (50) NOT NULL,
+PRIMARY KEY CLUSTERED (id_type_film ASC)
+);
+
+
+CREATE TABLE film (
+id_film INT IDENTITY (1, 1) NOT NULL,
+titre VARCHAR (50) NOT NULL,
+annee_film VARCHAR(4),
+commentaire_film VARCHAR (MAX),
+PRIMARY KEY CLUSTERED (id_film ASC),
+id_type_film int FOREIGN KEY REFERENCES type_film(id_type_film)
+);
+
+
+
+CREATE TABLE saison (
+id_saison INT IDENTITY (1, 1) NOT NULL,
+nom_saison VARCHAR (50),
+commentaire_saison VARCHAR (MAX),
+PRIMARY KEY CLUSTERED (id_saison ASC)
+);
+
+CREATE TABLE episode (
+id_episode INT IDENTITY(1, 1) NOT NULL,
+nom_episode VARCHAR(50),
+commentaire_episode VARCHAR(MAX),
+annee_episode VARCHAR(4),
+realisateur VARCHAR(50),
+duree int,
+age_visualisation VARCHAR(3),
+lien_video VARCHAR(max),
+lien_image VARCHAR(max),
+nb_vues int,
+PRIMARY KEY CLUSTERED (id_episode ASC),
+id_film int FOREIGN KEY REFERENCES film(id_film),
+id_saison int FOREIGN KEY REFERENCES saison(id_saison)
+);
+
+
+
+CREATE TABLE film_categorie (
+id_film_categorie INT IDENTITY (1, 1) NOT NULL,
+nom_categorie VARCHAR (20),
+PRIMARY KEY CLUSTERED (id_film_categorie ASC)
+);
+
+
+CREATE TABLE film_film_categorie (
+id_film int NOT NULL,
+id_film_categorie int NOT NULL,
+CONSTRAINT film_film_categorie_PK PRIMARY KEY (id_film, id_film_categorie),
+CONSTRAINT film_film_categorie_film_FK FOREIGN KEY (id_film)
+REFERENCES film(id_film),
+CONSTRAINT film_film_categorie_film_categorie_FK FOREIGN KEY (id_film_categorie)
+REFERENCES film_categorie(id_film_categorie)
+);
+
+
+create table profil_film(
+id_profil int not null,
+id_film int not null,
+constraint profil_film_pk primary key(id_profil ,id_film),
+constraint profil_film_profil_fk foreign key (id_profil)
+references profil(id_profil),
+constraint profil_film_film_fk foreign key (id_film)
+references film(id_film)
+);
+	 
